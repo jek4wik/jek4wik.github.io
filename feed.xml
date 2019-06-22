@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jekyll for Wiki</title>
+    <description>Bootstrap project based on Jekyll to build a static Wiki
+</description>
+    <link>htpps://jek4wik.github.io</link>
+    
+    
+      
+        <item>
+          <title>New Page</title>
+          <description>New
+
+</description>
+          <pubDate>2009-04-12T00:00:00+00:00</pubDate>
+          <link>htpps://jek4wik.github.io/New</link>
+          <guid isPermaLink="true">htpps://jek4wik.github.io/New</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>New Page (Adoc)</title>
+          <description>
+New
+
+
+
+</description>
+          <pubDate>2009-04-12T00:00:00+00:00</pubDate>
+          <link>htpps://jek4wik.github.io/New-Adoc</link>
+          <guid isPermaLink="true">htpps://jek4wik.github.io/New-Adoc</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Main Page</title>
+          <description>Why ?
+
+</description>
+          <pubDate>2009-04-12T00:00:00+00:00</pubDate>
+          <link>htpps://jek4wik.github.io/Main</link>
+          <guid isPermaLink="true">htpps://jek4wik.github.io/Main</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Old Page</title>
+          <description>Old
+This is an old page from an ancient Wiki.
+Migrated
+It has been exported as an HTML file, with a frontmatter.
+</description>
+          <pubDate>2009-01-01T00:00:00+00:00</pubDate>
+          <link>htpps://jek4wik.github.io/Old</link>
+          <guid isPermaLink="true">htpps://jek4wik.github.io/Old</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Minimal</title>
+          <description>Example with minimal frontmatter
+</description>
+          <pubDate></pubDate>
+          <link>htpps://jek4wik.github.io/Minimal</link>
+          <guid isPermaLink="true">htpps://jek4wik.github.io/Minimal</guid>
+        </item>
+      
+    
+  </channel>
+</rss>

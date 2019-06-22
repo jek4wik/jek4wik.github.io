@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Main Page - Jekyll for Wiki</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/main.css" /><link rel="alternate" type="application/atom+xml" title="Jekyll for Wiki feed" href="/feed.xml" />
+
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="title">Main Page</h1>
+      <div id="content"><h1 id="why-">Why ?</h1>
+
+<p>I wrote this template in 2019 because I wanted to migrate a mediawiki-powered wiki to jekyll.</p>
+
+<p>The template has a layout and a navigation that can replace my old wiki.</p>
+
+<h1 id="how-to">How to</h1>
+
+<p>If you want to use this template, clone the <a href="https://github.com/jek4wik/jek4wik">repository</a>, customize it and write <em>wiki</em> pages.</p>
+
+<h2 id="settings">Settings</h2>
+
+<p>The general settings are in the _config.yml file.</p>
+
+<p>You may choose the <em>language</em>.
+English (en) and french (fr) are supported out-of-the box.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">lang</span><span class="pi">:</span> <span class="s">en</span>
+</code></pre></div></div>
+
+<p>You may customize the <em>collections</em>.
+The only contraint is that the name of collections containing wiki pages should start with wiki.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">wiki-one</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/:path"</span> 
+    <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+  <span class="na">wiki-two</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/:path"</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+  <span class="na">special</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">permalink</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/:path"</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+</code></pre></div></div>
+
+<p>Of course, you’ll have to change the other site settings like title, description or url.</p>
+
+<h2 id="i18n">i18n</h2>
+
+<p>The labels are in i18n files in the <code class="highlighter-rouge">_data/i18n</code> directory.</p>
+
+<p>These files contain also prefixes for special pages, the name of home page and the logo that will be displayed on the top left.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">home</span><span class="pi">:</span> <span class="s">Main</span>
+<span class="na">logo</span><span class="pi">:</span> <span class="s">/img/wiki.png</span>
+<span class="na">label</span><span class="pi">:</span>
+  <span class="na">author</span><span class="pi">:</span> <span class="s">Author</span>
+  <span class="na">links</span><span class="pi">:</span> <span class="s">Links</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="s">Other pages</span>
+  <span class="s">...</span>
+<span class="na">prefix</span><span class="pi">:</span>
+  <span class="na">tag</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Category:"</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s2">"</span><span class="s">User:"</span>
+</code></pre></div></div>
+
+<h2 id="users">Users</h2>
+
+<p>The users are declared in the _data/users.yml file.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">Alexis</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">Alexis Hassler</span>
+  <span class="na">logo</span><span class="pi">:</span> <span class="s">img/sewatech.png</span>
+</code></pre></div></div>
+
+<p>Each user should have its page in the <code class="highlighter-rouge">_special</code> directory.
+The name of this page starts with the prefix defined in the i18n file (here <code class="highlighter-rouge">User:</code>) 
+and end with the user short name (here <code class="highlighter-rouge">Alexis</code>).</p>
+
+<h1 id="wiki-pages">Wiki pages</h1>
+
+<p>Wiki pages are in collections that name starts with wiki.
+The bootstrap project provides 2 collections : <code class="highlighter-rouge">wiki</code> and <code class="highlighter-rouge">wiki-legacy</code>.</p>
+
+<p>The pages can be written in HTML, Markdown or Asciidoc.</p>
+
+<blockquote>
+  <p>Note: Asciidoc is not supported on Github pages.</p>
+</blockquote>
+
+<h2 id="regular-wiki-page">Regular wiki page</h2>
+
+<p>A regular wiki page should be place in a <em>wiki</em> collection.
+The only required metadata in frontmatter is the layout.
+The simplest page may be something like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">wiki</span>
+<span class="nn">---</span>
+<span class="s">Example with minimal frontmatter</span>
+</code></pre></div></div>
+
+<p>The frontmatter may contain the following attributes:</p>
+
+<ul>
+  <li>title: will be displayed on top of the page</li>
+  <li>author: will be displayed in a div in the left columns</li>
+  <li>toc: true/false wether you want a generated table of content</li>
+  <li>created and modified: date in format yyyy-MM-dd</li>
+  <li>revisions: not displayed (maybe for a future use)</li>
+</ul>
+
+<blockquote>
+  <p>Note: the toc plugin doesn’t work on Github pages</p>
+</blockquote>
+
+<h2 id="redirect-page">Redirect page</h2>
+
+<p>A redirect page should be place in the <em>special</em> collection.
+It should have a frontmatter with a <strong>layout</strong> and a <strong>redirect</strong>, and no content</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">redirect</span>
+<span class="na">redirect</span><span class="pi">:</span> <span class="s">New</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: redirections may be managed in an other way with the <em>jekyll-redirect-from</em> plugin</p>
+</blockquote>
+
+<h2 id="tag-page">Tag page</h2>
+
+<p>A tag page should be place in a <em>special</em> collection.
+The file name should have the prefix defined in the <em>i18n</em> file and end with the tag name.</p>
+
+<p>For example, a file named <code class="highlighter-rouge">Tag:Example.md</code> would fit with the following i18n configuration.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">prefix</span><span class="pi">:</span>
+  <span class="na">tag</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Tag:"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: this is in the i18n files because mediawiki translates this prefix ; it is Category in english and Catégorie in french</p>
+</blockquote>
+
+<p>The tag page may have the same metadata as a regular page.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">tag</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Example of Tag</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="s">Example</span>
+<span class="na">toc</span><span class="pi">:</span> <span class="no">false</span>
+<span class="na">created</span><span class="pi">:</span> <span class="s">2019-04-12</span>
+<span class="na">modified</span><span class="pi">:</span> <span class="s">2019-04-12</span>
+<span class="na">revisions</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="na">author</span><span class="pi">:</span> <span class="s">Alexis</span>
+  <span class="na">date</span><span class="pi">:</span> <span class="s">2019-04-12</span>
+  <span class="na">comment</span><span class="pi">:</span> <span class="s">First version</span>
+<span class="nn">---</span>
+<span class="c1">## Example Tag</span>
+
+<span class="s">Nice examples</span>
+</code></pre></div></div>
+
+<h2 id="user-pages">User pages</h2>
+
+<p>A user page should be place in a <em>special</em> collection.
+The file name should have the prefix defined in the <em>i18n</em> file and end with the user name.</p>
+
+<p>For example, a file named <code class="highlighter-rouge">User:Example.md</code> would fit with the following i18n configuration.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">prefix</span><span class="pi">:</span>
+  <span class="na">user</span><span class="pi">:</span> <span class="s2">"</span><span class="s">User:"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: this is in the i18n files because mediawiki translates this prefix ; it is User in english and Utilisateur in french</p>
+</blockquote>
+
+<p>The user page may have the same metadata as a regular page.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">user</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Alexis</span>
+<span class="na">created</span><span class="pi">:</span> <span class="s">2019-04-12</span>
+<span class="na">modified</span><span class="pi">:</span> <span class="s">2019-04-12</span>
+<span class="nn">---</span>
+<span class="s">I'm a developer.</span>
+</code></pre></div></div>
+
+<h1 id="deploy">Deploy</h1>
+
+<p>The simplest way to deploy your wiki is to generate the site and copy it to a Web Server.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">jekyll build</span>
+</code></pre></div></div>
+
+<p>As any Jekyll web site, the generation may be done on a CI server (TravisCI,…) or with the CI capabilities of the Git server (Gitlab, Github actions,…).</p>
+
+<h2 id="apache-http-server">Apache HTTP server</h2>
+
+<p>A <code class="highlighter-rouge">.htaccess</code> file is provided.
+If the site is deployed on a Apache HTTP server, some old mediawiki URLs are rewritten to the new Jekyll URLs.</p>
+
+<h2 id="github-pages">Github pages</h2>
+
+<p>The wiki cannot be deloyed simply on Github pages because of unsupported filters and custom plugins.</p>
+
+<p>If you want to deploy it on Github pages, you should push the generated site.
+Any CI tool can help.</p>
+
+<h2 id="gitlab-pages--ci">Gitlab pages / CI</h2>
+
+<p>If your source code is hosted on Gitlab, you can deploy the wiki on Gitlab page.
+The .gitlab-ci.yml provides a generic setup for that.
+When you push on Gitlab, the file is be detected and a pipeline is run.
+The wiki is then deployed on pages.</p>
+
+<blockquote>
+  <p>Note: the deployment may occur several minutes after the end of the build.</p>
+</blockquote>
+
+<p>With the provided configuration, Gitlab CI may also upload the site with SFTP.</p>
+
+<p>Reference:</p>
+
+<ul>
+  <li><a href="https://docs.gitlab.com/ee/user/project/pages/">GitLab Pages</a></li>
+</ul>
+
+<h2 id="github-actions">Github actions</h2>
+
+<p>[TBD]</p>
+
+<h2 id="travisci">TravisCI</h2>
+
+<p><a href="https://travis-ci.org/">Travis CI</a> can launch automatically the jekyll build and deploy the site.</p>
+
+<p>The examples and this page are built this way.
+The <a href="https://github.com/jek4wik/jek4wik">repository</a> provides a <code class="highlighter-rouge">.travis.yml</code> configuration file wich deploy the built site on Github Pages.
+If want to use it, just change the <code class="highlighter-rouge">repo</code> and setup your build on Travis CI with the GITHUB_TOKEN environment variable.</p>
+
+<p>With the provided configuration, Travis CI may also upload the site with SFTP.</p>
+
+<p>References:</p>
+
+<ul>
+  <li><a href="https://docs.travis-ci.com/user/deployment/pages/">Travis CI - GitHub Pages Deployment</a></li>
+  <li><a href="https://docs.travis-ci.com/user/deployment/script/">Travis CI - Script deployment</a></li>
+</ul>
+
+<h1 id="examples">Examples</h1>
+
+<ul>
+  <li>Example of a <a href="New">new page</a></li>
+  <li>Example of a <a href="Old">legacy page</a></li>
+  <li>Example of a <a href="Redirect">redirected page</a></li>
+  <li>Example of a <a href="./User:Alexis">user page</a></li>
+  <li><a href="feed.xml">RSS</a> feed of new pages</li>
+  <li>Example of a <a href="./Tag:Example">tag page</a></li>
+  <li><a href="./tags">All tags page</a></li>
+</ul>
+
+</div>
+    </div>  
+    <div id="menu"><div id="logo">
+  <a href="/Main" style="background-image: url(/img/wiki.png);" title="Main page"></a>
+</div>
+<div id="global" class="portlet">
+  <h3>Special pages</h3>
+  <ul class="portlet-body"><li><a href="/Main">Home page</a></li><li><a href="/Special:Categories">All the tags</a></li><li><a href="/Special:AllPages">All the pages</a></li><li><a href="/Special:RecentChanges">Recent changes</a></li><li><a href="/Special:LongPages">Long pages</a></li><li><a href="/Special:ShortPages">Short pages</a></li><li><a href="/Special:ListUsers">All the users</a></li><li><a href="/Special:ListRedirects">Redirects</a></li></ul>
+</div>
+</div>
+    <footer>
+    <div id="footer-left">
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/" id="license">
+            <img src="https://creativecommons.org/images/public/somerights20.png">
+        </a>
+    </div>
+    <div id="footer-center">Modified: 2009-04-12<br/>Created: 2009-04-12</div>
+    <div id="footer-right">
+        <a href="https://jekyllrb.com/" title="Jekyll" id="poweredby">
+            <span>Powered by</span><img src="/img/jekyll-tube-bw.png">
+        </a></div>
+</footer>
+
+  </body>
+</html>
